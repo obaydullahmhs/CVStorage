@@ -21,5 +21,11 @@ namespace CVStorage.Controllers
             var model = _personRepository.GetAllPersons();
             return View(model);
         }
+
+        public IActionResult Profile(int ID)
+        {
+            var model = _personRepository.GetPerson(ID);
+            return View(model);
+        }
     }
 }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CVStorage.Models
 {
-    public class SQLPersonRepo
+    public class SQLPersonRepo : IPersonRepo
     {
         private readonly AppDbContext context;
 
