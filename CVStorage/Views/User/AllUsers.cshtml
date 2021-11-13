@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+}
+@model IEnumerable<Person>
+
+@{
+    ViewBag.Title = "User List";
+}
+<div class="card-deck">
+    @foreach (var person in Model)
+    {
+        var photoPath = "~/images/" + (person.PhotoPath ?? "dummy.png");
+        <div class="card m-3" style="min-width: 18rem; max-width:30.5%;">
+            <div class="card-header">
+                <h3>@person.Name</h3>
+            </div>
+
+            <img class="card-img-top imageThumbnail" src="@photoPath"
+                 asp-append-version="true" />
+
+            <div class="card-footer text-center">
+                <a asp-controller="home" asp-action="details" asp-route-id="@person.ID"
+                   class="btn btn-primary m-1">View</a>
+                <a asp-controller="home" asp-action="edit" asp-route-id="@person.ID"
+                   class="btn btn-primary m-1">Edit</a>
+                <a href="#" class="btn btn-danger m-1">Delete</a>
+            </div>
+        </div>
+    }
+</div>

@@ -1,5 +1,6 @@
 using CVStorage.Areas.Identity.Data;
 using CVStorage.Data;
+using CVStorage.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +31,8 @@ namespace CVStorage
             
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddScoped<IPersonRepo, MockPersonRepo>();
 
 
         }
