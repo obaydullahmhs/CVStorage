@@ -83,7 +83,21 @@ namespace CVStorage.Areas.Identity.Pages.Account
             {
                 var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
-                var newUser = new Person { Name="User", Email = Input.Email };
+                var newUser = new Person {
+                    ID=user.Id , 
+                    Name="User", 
+                    Email = Input.Email,
+                    University = "NoInformation",
+                    Subject = "NoInformation",
+                    Skills = "NoInformation",
+                    Phone = "NoInformation",
+                    Project = "NoInformation",
+                    PhotoPath = "dummy.png",
+                    IsAccepted = false,
+                    SSC_GPA = 0.0,
+                    HSC_GPA = 0.0,
+                    Bachelor_CGPA = 0.0
+                };
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");

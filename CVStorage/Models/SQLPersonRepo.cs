@@ -21,7 +21,7 @@ namespace CVStorage.Models
             return person;
         }
 
-        public Person Delete(int ID)
+        public Person Delete(string ID)
         {
             Person person = context.Persons.Find(ID);
             if (person != null)
@@ -37,9 +37,10 @@ namespace CVStorage.Models
             return context.Persons;
         }
 
-        public Person GetPerson(int ID)
+        public Person GetPerson(string ID)
         {
-            return context.Persons.Find(ID);
+            Person person =  context.Persons.Find(ID);
+            return person;
         }
 
         public Person Update(Person personChanges)

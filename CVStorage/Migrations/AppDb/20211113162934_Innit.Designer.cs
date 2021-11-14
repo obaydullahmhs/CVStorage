@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CVStorage.Migrations.AppDb
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211113111418_Innitial Migration")]
-    partial class InnitialMigration
+    [Migration("20211113162934_Innit")]
+    partial class Innit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,10 +22,8 @@ namespace CVStorage.Migrations.AppDb
 
             modelBuilder.Entity("CVStorage.Models.Person", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("ID")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<double>("Bachelor_CGPA")
                         .HasColumnType("float");

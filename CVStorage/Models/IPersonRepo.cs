@@ -7,10 +7,10 @@ namespace CVStorage.Models
 {
     public interface IPersonRepo
     {
-        Person GetPerson(int ID);
+        Person GetPerson(string ID);
         IEnumerable<Person> GetAllPersons();
         Person Add(Person person);
         Person Update(Person personChanges);
-        Person Delete(int ID);
+        Person Delete(string ID);
     }
 }

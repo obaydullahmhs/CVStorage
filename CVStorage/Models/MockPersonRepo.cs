@@ -13,9 +13,9 @@ namespace CVStorage.Models
         {
             _personList = new List<Person>()
             {
-                new Person(){ ID=1, Name = "Arnab" , Email = "arnab@gmail.com"},
-                new Person(){ ID=2, Name = "Abu" , Email = "abu@gmail.com"},
-                new Person(){ ID=3, Name = "Obu" , Email = "obu@gmail.com"}
+                new Person(){ ID="1", Name = "Arnab" , Email = "arnab@gmail.com"},
+                new Person(){ ID="2", Name = "Abu" , Email = "abu@gmail.com"},
+                new Person(){ ID="3", Name = "Obu" , Email = "obu@gmail.com"}
             };
         }
 
@@ -26,7 +26,7 @@ namespace CVStorage.Models
             return person;
         }
 
-        public Person Delete(int ID)
+        public Person Delete(string ID)
         {
             Person person = _personList.FirstOrDefault(e => e.ID == ID);
             if (person != null)
@@ -41,7 +41,7 @@ namespace CVStorage.Models
             return _personList;
         }
 
-        public Person GetPerson(int ID)
+        public Person GetPerson(string ID)
         {
             return _personList.FirstOrDefault(e => e.ID == ID);
         }

@@ -2,7 +2,7 @@
 
 namespace CVStorage.Migrations.AppDb
 {
-    public partial class InnitialMigration : Migration
+    public partial class Innit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,8 +10,7 @@ namespace CVStorage.Migrations.AppDb
                 name: "Persons",
                 columns: table => new
                 {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ID = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     Phone = table.Column<string>(nullable: true),

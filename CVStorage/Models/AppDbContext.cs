@@ -16,17 +16,5 @@ namespace CVStorage.Models
 
         public DbSet<Person> Persons { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    object p = modelBuilder.Entity<Person>().HasData(
-        //        new Person
-        //        {
-                    
-
-        //        }
-        //        );
-        //    ;
-        //}
-
     }
 }

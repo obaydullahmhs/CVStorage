@@ -22,9 +22,9 @@ namespace CVStorage.Controllers
             return View(model);
         }
 
-        public IActionResult Profile(int ID)
+        public IActionResult Profile(string ID)
         {
-            var model = _personRepository.GetPerson(ID);
+            Person model = _personRepository.GetPerson(ID);
             return View(model);
         }
     }
