@@ -8,8 +8,8 @@
 
 @{
     ViewBag.Title = "Profile";
-    //var photoPath = "~/images/" + (Model.PhotoPath ?? "dummy.png");
-    var photoPath = "~/images/dummy.png";
+    var photoPath = "~/images/" + (Model.PhotoPath ?? "dummy.png");
+    //var photoPath = "~/images/dummy.png";
 }
 
 <div class="row justify-content-center m-3">
@@ -24,11 +24,21 @@
 
                 <h4>Email : @Model.Email</h4>
                 <h4>Phone : @Model.Phone</h4>
+                <h4>Universiry : @Model.University</h4>
+                <h4>Subject : @Model.Subject</h4>
+                <h3>Result :</h3>
+                <h4>Bachelor : @Model.Bachelor_CGPA</h4>
+                <h4>HSC : @Model.HSC_GPA</h4>
+                <h4>SSC : @Model.SSC_GPA</h4>
+                <br />
+                <h4>Project : @Model.Project</h4>
+                <h4>Skills : @Model.Skills</h4>
+                
 
             </div>
             <div class="card-footer text-center">
                 <a asp-controller="home" asp-action="index" class="btn btn-primary">Back</a>
-                <a asp-controller="home" asp-action="edit" asp-route-id=" @Model.ID"
+                <a asp-controller="User" asp-action="Edit" asp-route-id="@Model.ID"
                    class="btn btn-primary m-1">Edit</a>
                 <a href="#" class="btn btn-danger">Delete</a>
             </div>
